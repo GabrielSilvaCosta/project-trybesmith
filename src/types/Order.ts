@@ -3,4 +3,3 @@ export type Order = {
   userId: 'fake';
   productId?: 'fake';
 };
-//
