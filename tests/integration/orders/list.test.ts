@@ -37,6 +37,7 @@ describe('GET /orders', function () {
   it('Deve retornar um erro ao fazer login com nome de usuário inexistente', async function () {
     const username = 'nonexistentuser';
     const password = 'password';
+    //
 
     
     sinon.stub(UserModel, 'findOne').resolves(null);
