@@ -28,4 +28,19 @@ describe('POST /products', function () {
     expect(response.body).to.have.property('price', '10 peças de ouro');
   });
 
+  it('Deve retornar um erro ao criar um produto com dados inválidos', async function () {
+    const invalidProductData = {
+      name: '', // Nome em branco
+      price: '5', // Preço com menos de 3 caracteres
+    };
+  
+    const response = await chai
+      .request(app)
+      .post('/products')
+      .send(invalidProductData);
+  
+    expect(response).to.have.status(400);
+    expect(response.body).to.have.property('message', '"name" is required');
+  });
+
 });

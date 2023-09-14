@@ -16,4 +16,6 @@ describe("GET /products", function () {
     expect(response).to.have.status(200);
     expect(response.body).to.be.an("array");
   });
+
+  
 });
